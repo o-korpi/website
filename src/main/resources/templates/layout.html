@@ -1,0 +1,20 @@
+{% extends "templates/base.html" %}
+
+
+{% block layout %}
+
+<body class="flex flex-col  h-full">
+
+{% include "components/nav.html" %}
+
+
+<div class="flex-grow">
+{% block content %}
+{% endblock content %}
+</div>
+
+{% include "components/footer.html" %}
+
+</body>
+
+{% endblock layout %}

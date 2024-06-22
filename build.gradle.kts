@@ -1,4 +1,6 @@
+@Suppress("PropertyName")
 val kotlin_version: String by project
+@Suppress("PropertyName")
 val logback_version: String by project
 
 plugins {
@@ -14,6 +16,23 @@ application {
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
+}
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "se.korpi.Main"
+    }
+
+    // To avoid the duplicate handling strategy error
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    // To add all the dependencies
+    from(sourceSets.main.get().output)
+
+    dependsOn(configurations.runtimeClasspath)
+    from({
+        configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) }
+    })
 }
 
 repositories {
