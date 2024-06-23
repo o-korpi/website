@@ -1,10 +1,10 @@
-<footer class="flex-grow-0 m-4 rounded-lg shadow flex justify-between p-4">
+<footer class="flex-grow-0 flex justify-between p-6 px-12 items-center text-gray-400 bg-oxford-blue">
     <div>
-        <span class="text-gray-500 text-sm">© 2024 Oscar Korpi. All rights reserved.</span>
+        <span class="text-sm">© 2024 Oscar Korpi. All rights reserved.</span>
     </div>
     <ul class="flex items-center">
         <li class="p-2">
-            contact@korpi.se
+            {% include "components/link.html" with { "target": "mailto:contact@korpi.se", "text": "contact@korpi.se" } %}
         </li>
     </ul>
 </footer>
