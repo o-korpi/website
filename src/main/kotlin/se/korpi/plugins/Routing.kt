@@ -24,7 +24,55 @@ fun Application.configureRouting() {
         }
         
         get("/projects/conveyor") {
-            call.respond(PebbleContent("templates/projects/conveyor.html", mapOf()))
+            val conveyorYamlBasic = """
+                project:
+                  name: myProject
+                  group: com.example
+                  version: 0.0.1
+
+                  kotlinVersion: 2.0.0
+                  jvmTarget: 1.8  # Valid values: 1.8, 9, 10, ..., 21. Default 1.8
+                  mainClass: "com.example.myProject.MainKt"
+                  versions:
+
+                  plugins:
+
+                  dependencies:
+
+                  testDependencies:
+            """.trimIndent()
+            
+            val conveyorYaml = """
+                project:
+                  name: myProject
+                  group: com.example
+                  version: 0.0.1
+                  
+                  versions:
+                    kotlin: 2.0.0
+                    ktor: 2.3.12
+                    kotest: 5.9.1
+
+                  kotlinVersion: "${'$'}kotlin"
+                  jvmTarget: 21  # Valid values: 1.8, 9, 10, ..., 21. Default 1.8
+                  mainClass: "com.example.myProject.MainKt"
+                  
+                  plugins:
+                    - "kotlinx-serialization:org.jetbrains.kotlin:kotlin-maven-serialization:${'$'}kotlin"
+                    
+                  dependencies:
+                    - "org.jetbrains.kotlinx:kotlinx-serialization-json:${'$'}kotlin"
+                    - "io.ktor:ktor-server-core:${'$'}ktor"
+                    - "io.ktor:ktor-server-netty:${'$'}ktor"
+                    - "ch.qos.logback:logback-classic:1.4.14"
+                    
+                  testDependencies:
+                    - "io.kotest:kotest-runner-junit5:${'$'}kotest"
+                    - "io.kotest:kotest-assertions-core:${'$'}kotest"
+                    
+            """.trimIndent()
+            
+            call.respond(PebbleContent("templates/projects/conveyor.html", mapOf("basic" to conveyorYamlBasic, "yaml" to conveyorYaml)))
         }
         
         get("/projects/sequdiff") {
