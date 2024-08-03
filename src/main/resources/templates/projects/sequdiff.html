@@ -1,0 +1,35 @@
+{% extends "templates/layout.html" %}
+
+{% block content %}
+
+<div class="flex flex-col w-full h-full">
+    <div class="w-full grid items-center justify-center py-52 bg-indigo-dye">
+        <div class="flex flex-col gap-8 text-gray-200">
+            <h1 class="text-5xl text-gray-100 text-center underline underline-offset-4 decoration-imperial-red font-bold">sequdiff</h1>
+            <p class="text-center">A part of a tool to handle database schema migrations &ndash; an idea and a work in progress project.</p>
+        </div>
+    </div>
+    <div class="w-full px-24 flex flex-col items-center py-16 text-gray-900">
+        <div class="max-w-screen-lg">
+            <h2 class="text-3xl py-2">Motivation</h2>
+            <p>
+                Tools like Flyway already exist, but they rely on using multiple SQL files, and Flyway does not
+                support squashing these files in the open source version. I thought that it would be a interesting challenge to
+                write my own database schema migration tool.
+                <br><br>
+                The idea behind sequdiff isn't to be a complete migration tool. Instead, it's supposed
+                to find the differences between your database and the SQL you feed into sequdiff. Sequdiff is meant
+                to be one piece of the puzzle in a larger, more complete database migration tool.
+            </p>
+
+            <h2 class="text-3xl py-2 mt-2">The project</h2>
+            <p>
+                The project is mostly complete.
+
+
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

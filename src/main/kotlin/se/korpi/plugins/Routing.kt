@@ -18,5 +18,26 @@ fun Application.configureRouting() {
         get("/") {
             call.respond(PebbleContent("templates/index.html", mapOf()))
         }
+        
+        get("/projects") {
+            call.respond(PebbleContent("templates/projects.html", mapOf()))
+        }
+        
+        get("/projects/conveyor") {
+            call.respond(PebbleContent("templates/projects/conveyor.html", mapOf()))
+        }
+        
+        get("/projects/sequdiff") {
+            call.respond(PebbleContent("templates/projects/sequdiff.html", mapOf()))
+        }
+        
+        get("/projects/query4k") {
+            call.respond(PebbleContent("templates/projects/query4k.html", mapOf()))
+        }
+        
+        get("/projects/kotlin-baseuid") {
+            call.respond(PebbleContent("templates/projects/kotlin-baseuid.html", mapOf()))
+        }
+        
     }
 }

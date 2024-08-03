@@ -1,0 +1,40 @@
+{% extends "templates/layout.html" %}
+
+{% block content %}
+
+<div class="flex flex-col w-full h-full">
+    <div class="w-full grid items-center justify-center py-52 bg-indigo-dye">
+        <div class="flex flex-col gap-8 text-gray-200">
+            <h1 class="text-5xl text-gray-100 text-center underline underline-offset-4 decoration-imperial-red font-bold">query4k</h1>
+            <p class="text-center">A simple Kotlin library to interact with your relational databases.</p>
+        </div>
+    </div>
+    <div class="w-full px-24 flex flex-col items-center py-16 text-gray-900">
+        <div class="max-w-screen-lg">
+            <h2 class="text-3xl py-2">Motivation</h2>
+            <p>
+                At the time of writing this library, it felt to me like Kotlin really lacked good libraries
+                for interacting with your SQL database. I tried most of the common ORMs
+                (Exposed, JPA, Ktorm), but ORMs come with their own drawbacks, and I didn't feel like any of these libraries
+                offered any features that were good enough to compensate for the disadvantages that are inherent in ORMs. I also found all of them to be
+                quite frustrating to work with.
+                <br><br>
+                I prefer writing my queries manually rather than using an ORM. While there is a library on the JVM, jOOQ, that does this,
+                I found it quite complex to set up. I wanted something that is both simple and offers control.
+                JDBC exists, but it is too low-level. And so, query4k was created, building on top of JDBC.
+                <br><br>
+                Recently I discovered the <a class="underline" href="https://github.com/target/lite-for-jdbc">lite-for-jdbc</a> library,
+                which is quite similar to query4k. I would probably recommend it over query4k in most projects, as it is
+                more mature and has better feature support. The advantage query4k does have over lite-for-jdbc is how query4k
+                leverages Kotlinx serialization to remove a little boilerplate code.
+            </p>
+
+            <h2 class="text-3xl py-2 mt-2">The project</h2>
+            <p>
+                You can read more about this project on its <a class="underline" href="https://github.com/o-korpi/query4k">GitHub repository</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
