@@ -12,7 +12,7 @@ group = "se.korpi"
 version = "0.0.1"
 
 application {
-    mainClass.set("se.korpi.ApplicationKt")
+    mainClass.set("se.korpi.Main")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
