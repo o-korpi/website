@@ -1,0 +1,38 @@
+{% extends "templates/layout.html" %}
+
+{% block content %}
+
+<div class="flex flex-col w-full h-full">
+    <div class="w-full grid items-center justify-center py-52 bg-indigo-dye">
+        <div class="flex flex-col gap-8 text-gray-200">
+            <h1 class="text-5xl text-gray-100 text-center underline underline-offset-4 decoration-imperial-red font-bold">dbml2kt</h1>
+            <p class="text-center">Converter to turn <a href="https://dbml.dbdiagram.io/home/" class="underline">DBML (Database Markup Language)</a> files into Kotlin data classes.</p>
+        </div>
+    </div>
+    <div class="w-full px-24 flex flex-col items-center py-16 text-gray-900">
+        <div class="max-w-screen-lg">
+            <h2 class="text-3xl py-2">Motivation</h2>
+            <p>
+                While searching for tools to use for doing schema-first development of backend applications I ran into
+                <a href="https://dbml.dbdiagram.io/home/" class="underline">DBML (Database Markup Language)</a>.
+                I found it quite interesting and decided that it would be fun to try to implement some sort of
+                automatic generation of code using only DBML. The idea was that this could then be developed further,
+                with more related tooling to handle migrations and database management.
+                <br><br>
+                With the automatic generation of dataclasses, this tool also integrates quite well with my other
+                library <a class="underline" href="/projects/query4k">query4k</a>.
+            </p>
+
+            <h2 class="text-3xl py-2 mt-2">The project</h2>
+            <p>
+                The project is a simple CLI that takes your DBML files and then converts them to Kotlin files
+                at the specified destination. To get the converter working there are three main parts &ndash; a scanner,
+                a parser and a generator.
+                <br><br>
+                The project is currently not public on GitHub.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

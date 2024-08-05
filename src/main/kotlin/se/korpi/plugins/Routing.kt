@@ -79,6 +79,14 @@ fun Application.configureRouting() {
             call.respond(PebbleContent("templates/projects/sequdiff.html", mapOf()))
         }
         
+        get("/projects/apifetcher") {
+            call.respond(PebbleContent("templates/projects/apifetcher.html", mapOf()))
+        }
+        
+        get("/projects/dbml2kt") {
+            call.respond(PebbleContent("templates/projects/dbml2kt.html", mapOf()))
+        }
+        
         get("/projects/query4k") {
             call.respond(PebbleContent("templates/projects/query4k.html", mapOf()))
         }

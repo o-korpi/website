@@ -1,0 +1,39 @@
+{% extends "templates/layout.html" %}
+
+{% block content %}
+
+<div class="flex flex-col w-full h-full">
+    <div class="w-full grid items-center justify-center py-52 bg-indigo-dye">
+        <div class="flex flex-col gap-8 text-gray-200">
+            <h1 class="text-5xl text-gray-100 text-center underline underline-offset-4 decoration-imperial-red font-bold">apifetcher</h1>
+            <p class="text-center">A small Gleam project to continuously fetch, process, and store data from a stock market API, using Redis.</p>
+        </div>
+    </div>
+    <div class="w-full px-24 flex flex-col items-center py-16 text-gray-900">
+        <div class="max-w-screen-lg">
+            <h2 class="text-3xl py-2">Motivation</h2>
+            <p>
+                This project is a part of a larger project i'm working on.
+                <br>
+                Because of API limitations, I needed a way to get all the data I need and store it in an
+                easy-to-access way.
+            </p>
+
+            <h2 class="text-3xl py-2 mt-2">The project</h2>
+            <p>
+                To get the stock data I need, I must make use of multiple APIs. Some of these have very strict
+                limitations on rate limits. To get around this I must space out my requests quite a bit.
+                The data also becomes stale quite fast, as it is stock data, which means that it must be updated frequently.
+                <br><br>
+                The solution is to have this service running all the time, continuously making requests every few seconds.
+                The data then goes through some simple processing before being stored in a Redis database.
+                Redis is suitable here as I can set TTLs on the data, having it expire after 24 hours, ensuring that the
+                data in the database is always fresh.
+                <br><br>
+                The project is currently not public on GitHub.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
