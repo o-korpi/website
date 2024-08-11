@@ -5,14 +5,14 @@
 <div class="flex flex-col w-full h-full">
     <div class="w-full grid items-center justify-center py-52 bg-indigo-dye">
         <div class="flex flex-col gap-8 text-gray-200">
-            <h1 class="text-5xl text-gray-100 text-center underline underline-offset-4 decoration-imperial-red font-bold">conveyor</h1>
+            <h1 class="text-5xl text-gray-100 text-center underline underline-offset-4 decoration-imperial-red font-bold">Conveyor</h1>
             <p class="text-center">A simpler and more elegant build tool for Kotlin – an idea and a work in progress project.</p>
         </div>
     </div>
     <div class="w-full px-24 flex flex-col items-center py-16 text-gray-900">
-        <div class="max-w-screen-lg">
+        <div class="lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm max-w-fit">
             <h2 class="text-3xl py-2">Motivation</h2>
-            <p class="">
+            <p class="max-w-screen-lg">
                 Kotlin lacks good build tools.<br>
                 Maven is overly verbose. Gradle is overly complex.
                 Creating custom tasks in Maven is frustrating.
@@ -55,8 +55,8 @@
 
                 On generating a new project, the following conveyor file is generated in the project root:
             </p>
-            <div class="p-4 border border-gray-200 rounded my-2 shadow overflow-x-scroll">
-                <code class="whitespace-pre">{{ basic }}</code>
+            <div class="p-4 border border-gray-200 rounded my-2 shadow overflow-x-scroll max-w-screen-lg">
+                <pre class="max-w-screen-lg whitespace-pre"><code class="whitespace-pre">{{ basic }}</code></pre>
             </div>
             <p>
                 The conveyor file is quite simple and the main sections are clearly separated.
@@ -68,8 +68,8 @@
                 <br><br>
                 Here is an example of a more "full" conveyor file, that one might find in a normal project:
             </p>
-            <div class="p-4 border border-gray-200 rounded my-2 shadow overflow-x-scroll">
-                <code class="whitespace-pre">{{ yaml }}</code>
+            <div class="p-4 border border-gray-200 rounded my-2 shadow overflow-x-scroll max-w-screen-lg">
+                <pre class="max-w-screen-lg whitespace-pre"><code class="whitespace-pre">{{ yaml }}</code></pre>
             </div>
 
             <h3 class="text-2xl py-2">The Taskfile</h3>
